@@ -28,8 +28,6 @@ if (isset($_POST['submit'])) {
     $br_add = $_POST['br_add'];
     $br_long = $_POST['br_long'];
     $br_lat = $_POST['br_lat'];
-    $br_manager = $_POST['br_manager'];
-    $manager_em = $_POST['manager_em'];
     $phone = $_POST['phone'];
     $government = $_POST['city'];
     $name = "";
@@ -40,7 +38,7 @@ if (isset($_POST['submit'])) {
     }
 
 
-    $sql = "INSERT INTO `branches`(`name`,`name_en`, `government_id`,`address`, `longitude`, `latitude`, `manager_name`, `manager_email`, `phone`) VALUES ('$br_name_ar','$br_name_en','$government' ,'$br_add','$br_long','$br_lat','$br_manager','$manager_em','$phone')";
+    $sql = "INSERT INTO `branches`(`name`,`name_en`, `government_id`,`address`, `longitude`, `latitude`, `phone`) VALUES ('$br_name_ar','$br_name_en','$government' ,'$br_add','$br_long','$br_lat','$phone')";
     if ($conn->query($sql) === False) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     } else {
@@ -333,20 +331,7 @@ mysqli_close($conn);
                                                         <input type="number" name="br_long" step=any class="form-control" minlength="9" required />
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">Branch Manager <span class="required">*</span></label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" name="br_manager" class="form-control" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="col-sm-3 control-label">Manager Email <span class="required">*</span></label>
-                                                    <div class="col-sm-9">
-                                                        <div class="input-group">
-                                                            <input type="email" name="manager_em" class="form-control" placeholder="eg.: email@email.com" />
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                               
                                             </div>
                                             <footer class="panel-footer">
                                                 <div class="row">

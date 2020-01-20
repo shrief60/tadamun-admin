@@ -269,16 +269,18 @@ mysqli_close($conn);
                                                 <th>ID</th>
                                                 <th>Current Year</th>
                                                 <th>Years</th>
-                                                <th>clients</th>
-                                                <th>employees_num</th>
-                                                <th>branches_num</th>
-                                                <th>cities_num</th>
-                                                <th>years in Arabic</th>
-                                                <th>clients in Arabic</th>
-                                                <th>employees in Arabic</th>
-                                                <th>branches in Arabic</th>
-                                                <th>cities in Arabic</th>
-                                                <th>actions</th>
+                                                <th>Clients</th>
+                                                <th>Active Clients </th>
+                                                <th>Employees number</th>
+                                                <th>Branches number</th>
+                                                <th>Cities number </th>
+                                                <!-- <th>Years in Arabic</th>
+                                                <th>Clients in Arabic</th>
+                                                <th>Active Clients in Arabic</th>
+                                                <th>Employees in Arabic</th>
+                                                <th>Branches in Arabic</th>
+                                                <th>Cities in Arabic</th> -->
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -290,14 +292,16 @@ mysqli_close($conn);
                                                         <td> <?php echo $posts[$row]['Current_year']; ?></td>
                                                         <td> <?php echo $posts[$row]['years']; ?></td>
                                                         <td> <?php echo $posts[$row]['clients']; ?></td>
+                                                        <td> <?php echo $posts[$row]['active_clients']; ?></td>
                                                         <td> <?php echo $posts[$row]['employees_num']; ?></td>
                                                         <td> <?php echo $posts[$row]['branches_num']; ?></td>
                                                         <td> <?php echo $posts[$row]['cities_num']; ?></td>
-                                                        <td> <?php echo $posts[$row]['years_ar']; ?></td>
+                                                        <!-- <td> <?php echo $posts[$row]['years_ar']; ?></td>
                                                         <td> <?php echo $posts[$row]['clients_ar']; ?></td>
+                                                        <td> <?php echo $posts[$row]['active_clients_ar']; ?></td>
                                                         <td> <?php echo $posts[$row]['employees_num_ar']; ?></td>
                                                         <td> <?php echo $posts[$row]['branches_num_ar']; ?></td>
-                                                        <td> <?php echo $posts[$row]['cities_num_ar']; ?></td>
+                                                        <td> <?php echo $posts[$row]['cities_num_ar']; ?></td> -->
 
                                                         <td class="actions">
                                                             <a href="#" class="on-default edit-row" onclick="replace(this)"><i class="fa fa-pencil"></i></a>

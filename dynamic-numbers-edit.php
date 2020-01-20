@@ -46,11 +46,12 @@ if (isset($_POST['submit'])) {
     $employees_num_ar = $_POST['employees_num_ar'];
     $branches_num_ar = $_POST['branches_num_ar'];
     $cities_num_ar = $_POST['cities_num_ar'];
-
+    $active_clients_ar = $_POST['active_clients_ar'];
+    $active_clients = $_POST['active_clients'];
     $Current_year = $_POST['Current_year'];
 
     $row = $_GET["row"];
-    $sql = "UPDATE `dynamic_numbers` SET `years`='$years', `clients`='$clients', `employees_num`='$employees_num', `branches_num`='$branches_num', `cities_num`='$cities_num', `years_ar`='$years_ar', `Current_year`='$Current_year', `clients_ar`='$clients_ar', `employees_num_ar`='$employees_num_ar', `branches_num_ar`='$branches_num_ar', `cities_num_ar`='$cities_num_ar' WHERE `id`=$row";
+    $sql = "UPDATE `dynamic_numbers` SET `years`='$years', `clients`='$clients', `employees_num`='$employees_num', `branches_num`='$branches_num', `cities_num`='$cities_num', `years_ar`='$years_ar', `Current_year`='$Current_year', `clients_ar`='$clients_ar', `employees_num_ar`='$employees_num_ar', `branches_num_ar`='$branches_num_ar', `cities_num_ar`='$cities_num_ar',`active_clients`='$active_clients',`active_clients_ar`='$active_clients_ar' WHERE `id`=$row";
     if ($conn->query($sql) === False) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     } else {
@@ -301,6 +302,12 @@ mysqli_close($conn);
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                    <label class="col-sm-6 control-label">Active Clients Number<span class="required">*</span></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" name="active_clients" class="form-control" placeholder="eg.: 1000000" value="<?php echo $posts[0]['active_clients'] ?>" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
                                                     <label class="col-sm-3 control-label">employees number <span class="required">*</span></label>
                                                     <div class="col-sm-9">
                                                         <input type="text" name="employees_num" class="form-control" placeholder="eg.:1500" value="<?php echo $posts[0]['employees_num'] ?>" required />
@@ -328,6 +335,12 @@ mysqli_close($conn);
                                                     <label class="col-sm-3 control-label">clients number in arabic<span class="required">*</span></label>
                                                     <div class="col-sm-9">
                                                         <input type="text" name="clients_ar" class="form-control" placeholder="eg.:12" value="<?php echo $posts[0]['clients_ar'] ?>" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Active Clients number in arabic<span class="required">*</span></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" name="active_clients_ar" class="form-control" placeholder="eg.:12" value="<?php echo $posts[0]['active_clients_ar'] ?>" required />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

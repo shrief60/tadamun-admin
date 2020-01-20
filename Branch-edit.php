@@ -53,11 +53,10 @@ if (isset($_POST['submit'])) {
     $br_add = $_POST['br_add'];
     $br_long = $_POST['br_long'];
     $br_lat = $_POST['br_lat'];
-    $br_manager = $_POST['br_manager'];
-    $manager_em = $_POST['manager_em'];
+
     $phone = $_POST['phone'];
     $government = $_POST['government'];
-    $sql = "UPDATE `branches` SET `name`='$br_name',`name_en`='$br_name_en',`address`='$br_add',`longitude`='$br_long',`latitude`='$br_lat',`manager_name`='$br_manager',`manager_email`='$manager_em',`phone`='$phone',`government_id`='$government' WHERE `id`=$row";
+    $sql = "UPDATE `branches` SET `name`='$br_name',`name_en`='$br_name_en',`address`='$br_add',`longitude`='$br_long',`latitude`='$br_lat',`phone`='$phone',`government_id`='$government' WHERE `id`=$row";
     if ($conn->query($sql) === False) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     } else {
@@ -344,23 +343,6 @@ mysqli_close($conn);
                                                 <label class="col-sm-3 control-label">Latitude <span class="required">*</span></label>
                                                 <div class="col-sm-9">
                                                     <input type="number" name="br_lat" class="form-control" minlength="10" value="<?php echo $posts[$value]['latitude'] ?>" required />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Branch Manager <span class="required">*</span></label>
-                                                <div class="col-sm-9">
-                                                    <input type="text" name="br_manager" class="form-control" value="<?php echo $posts[$value]['manager_name'] ?>"  />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Manager Email <span class="required">*</span></label>
-                                                <div class="col-sm-9">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="fa fa-envelope"></i>
-                                                        </span>
-                                                        <input type="email" name="manager_em" class="form-control" value="<?php echo $posts[$value]['manager_email'] ?>"  />
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="form-group">

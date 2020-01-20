@@ -19,9 +19,11 @@ if (isset($_POST['submit'])) {
     $employees_num_ar = $_POST['employees_num_ar'];
     $branches_num_ar = $_POST['branches_num_ar'];
     $cities_num_ar = $_POST['cities_num_ar'];
+    $active_clients_ar = $_POST['active_clients_ar'];
+    $active_clients = $_POST['active_clients'];
     $Current_year = $_POST['Current_year'];
 
-    $sql = "INSERT INTO `dynamic_numbers`(`years`,`clients`, `employees_num`,`branches_num`, `cities_num`, `years_ar`, `Current_year`,`clients_ar`, `employees_num_ar`,`branches_num_ar`, `cities_num_ar`) VALUES ('$years','$clients','$employees_num' ,'$branches_num','$cities_num','$years_ar','$Current_year','$clients_ar','$employees_num_ar','$branches_num_ar','$cities_num_ar')";
+    $sql = "INSERT INTO `dynamic_numbers`(`years`,`clients`, `employees_num`,`branches_num`, `cities_num`, `years_ar`, `Current_year`,`clients_ar`, `employees_num_ar`,`branches_num_ar`, `cities_num_ar`,`active_clients`,`active_clients_ar`) VALUES ('$years','$clients','$employees_num' ,'$branches_num','$cities_num','$years_ar','$Current_year','$clients_ar','$employees_num_ar','$branches_num_ar','$cities_num_ar','$active_clients','$active_clients_ar')";
     if ($conn->query($sql) === False) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     } else {
@@ -279,6 +281,12 @@ mysqli_close($conn);
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                    <label class="col-sm-6 control-label">Active Clients Number<span class="required">*</span></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" name="active_clients" class="form-control" placeholder="eg.: 1000000" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
                                                     <label class="col-sm-3 control-label">employees number <span class="required">*</span></label>
                                                     <div class="col-sm-9">
                                                         <input type="text" name="employees_num" class="form-control" placeholder="eg.:1500" required />
@@ -309,9 +317,15 @@ mysqli_close($conn);
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                    <label class="col-sm-3 control-label">Active Clients number in arabic<span class="required">*</span></label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" name="active_clients_ar" class="form-control" placeholder="eg.:12" required />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
                                                     <label class="col-sm-3 control-label">employees number in arabic<span class="required">*</span></label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" name="employees_num_ar" class="form-control" placeholder="eg.:12"  required />
+                                                        <input type="text" name="employees_num_ar" class="form-control" placeholder="eg.:12" required />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -323,7 +337,7 @@ mysqli_close($conn);
                                                 <div class="form-group">
                                                     <label class="col-sm-3 control-label">cities number in arabic<span class="required">*</span></label>
                                                     <div class="col-sm-9">
-                                                        <input type="text" name="cities_num_ar" class="form-control" placeholder="eg.:12"  required />
+                                                        <input type="text" name="cities_num_ar" class="form-control" placeholder="eg.:12" required />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
