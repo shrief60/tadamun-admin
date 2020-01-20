@@ -182,7 +182,7 @@ mysqli_close($conn);
                             <span class="title"> branches/الفروع</span>
                         </a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class='sidebar-link' href="dynamic-numbers.php">
                             <span class="icon-holder">
                                 <i class="c-red-500 ti-view-list-alt"></i>
@@ -266,13 +266,11 @@ mysqli_close($conn);
                                             <tr>
                                                 <th>ID</th>
                                                 <th>City in Arabic</th>
-                                                <th>Br Name in Arabic</th>
-                                                <th>Br Name in English</th>
-                                                <th>Br Add</th>
+                                                <th>Branch Name in Arabic</th>
+                                                <th>Branch Name in English</th>
+                                                <th>Branch Address</th>
                                                 <th>Longitude</th>
                                                 <th>Latitude</th>
-                                                <th>Manager</th>
-                                                <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>actions</th>
                                             </tr>
@@ -289,8 +287,6 @@ mysqli_close($conn);
                                                         <td> <?php echo $posts[$row]['address']; ?></td>
                                                         <td> <?php echo $posts[$row]['longitude']; ?></td>
                                                         <td> <?php echo $posts[$row]['latitude']; ?></td>
-                                                        <td> <?php echo $posts[$row]['manager_name']; ?></td>
-                                                        <td> <?php echo $posts[$row]['manager_email']; ?></td>
                                                         <td> <?php echo $posts[$row]['phone']; ?></td>
                                                         <td class="actions">
                                                             <a href="#" class="on-default edit-row" onclick="replace(this)"><i class="fa fa-pencil"></i></a>
